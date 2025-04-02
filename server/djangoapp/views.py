@@ -29,7 +29,7 @@ def login_user(request):
     username = data['userName']
     password = data['password']
     # Try to check if provide credential can be authenticated
-    user = authenticate(username = username, password = password)
+    user = authenticate(username=username, password=password)
     data = {"userName": username}
     if user is not None:
         # If user is valid, call login method to login current user
@@ -60,7 +60,7 @@ def registration(request):
     email_exist = False
     try:
         # Check if user already exists
-        User.objects.get(username = username)
+        User.objects.get(username=username)
         username_exist = True
     except:
         # If not, simply log this is a new user
